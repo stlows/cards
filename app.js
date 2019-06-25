@@ -39,7 +39,8 @@ var app = new Vue({
     suits: ["s", "h", "d", "c"],
     deck: [],
     discarded: [],
-    inverted: true
+    inverted: true,
+    peekDeck: true
   },
   created: function() {
     var cards = [];
