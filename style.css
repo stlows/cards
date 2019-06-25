@@ -1,0 +1,125 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  padding: 1em;
+}
+h1 {
+  text-align: center;
+  margin: 30px;
+}
+.card {
+  width: 120px;
+  height: 170px;
+  text-transform: uppercase;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  border-radius: 15px;
+
+  transition: transform 0.2s;
+}
+
+.card:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+}
+
+.card.s {
+  color: #222;
+  background-color: white;
+}
+.card.s.inverted {
+  background-color: #222;
+  color: white;
+}
+
+.card.s:after {
+  content: "♠";
+}
+
+.card.h {
+  background-color: white;
+  color: #d00;
+}
+.card.h.inverted {
+  color: white;
+  background-color: #d00;
+}
+.card.h:after {
+  content: "♥";
+}
+
+.card.d {
+  background-color: white;
+  color: rgb(0, 130, 190);
+}
+.card.d.inverted {
+  color: white;
+  background-color: rgb(0, 130, 190);
+}
+.card.d:after {
+  content: "♦";
+}
+
+.card.c {
+  background-color: white;
+  color: rgb(15, 155, 47);
+}
+.card.c.inverted {
+  color: white;
+  background-color: rgb(15, 155, 47);
+}
+.card.c:after {
+  content: "♣";
+}
+
+.card .value {
+  position: absolute;
+  line-height: 50px;
+  font-size: 50px;
+}
+.card .value-normal {
+  top: 10px;
+  left: 10px;
+}
+.card .value-inverted {
+  bottom: 10px;
+  right: 10px;
+  transform: rotate(180deg);
+}
+
+/* HAND */
+.hand {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+.hand .card:hover {
+  transform: scale(1.1);
+  z-index: 9999;
+  cursor: pointer;
+}
+
+/* DISCARD-PILE */
+.discard-pile {
+  position: relative;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  width: auto;
+}
+.discard-pile .card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: none;
+}
+.discard-pile .card:hover {
+  transform: scale(1);
+  cursor: default;
+}
