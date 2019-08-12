@@ -3,10 +3,16 @@ Vue.component("my-card", {
   methods: {
     clicked: function() {
       app.discarded.push(this.card);
+    },
+    cardMouseDown(e) {
+      console.log(e);
+    },
+    cardMouseUp(e) {
+      console.log(e);
     }
   },
   template: `
-        <div class='card' :class='[card.suit, {inverted: card.inverted}]' @click="clicked" :title='card.value + card.suit'>
+        <div class='card' :class='[card.suit, {inverted: card.inverted}]' @click="clicked" @mousedown="cardMouseDown" @mouseup="cardMouseUp" :title='card.value + card.suit'>
             <div class='value value-normal'>{{ card.value }}</div>
             <div class='value value-inverted'>{{ card.value }}</div>
         </div>
